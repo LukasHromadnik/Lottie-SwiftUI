@@ -17,10 +17,10 @@ let package = Package(
         .iOS(.v13),
     ],
     dependencies: [
-        .package(name: "Lottie-SwiftUI", url: "https://github.com/LukasHromadnik/Lottie-SwiftUI.git", .upToNextMajor(from: Version(1, 0, 0)))
+        .package(name: "LottieSwiftUI", url: "https://github.com/LukasHromadnik/Lottie-SwiftUI.git", .upToNextMajor(from: Version(1, 0, 0)))
     ],
     targets: [
-        .target(name: "YourTestProject", dependencies: ["Lottie-SwiftUI"])
+        .target(name: "YourTestProject", dependencies: ["LottieSwiftUI"])
     ]
 )
 ```
@@ -28,7 +28,7 @@ let package = Package(
 ## Usage
 
 ```swift
-import Lottie-SwiftUI
+import LottieSwiftUI
 
 @State var playLottie = false
 

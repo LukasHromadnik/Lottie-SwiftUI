@@ -5,15 +5,20 @@ import Lottie
 public struct LottieView: UIViewRepresentable {
     
     /// Name of the animation
-    public let name: String
+    let name: String
     
     /// Flag if the animation should be played
-    @Binding public var play: Bool
+    @Binding var play: Bool
     
     /// Loop mode of the animation provided by the `@Environment`
     ///
     /// You can set this property using `lottieLoopMode` method on `View`
-    @Environment(\.lottieLoopMode) private var loopMode: LottieLoopMode
+    @Environment(\.lottieLoopMode) var loopMode: LottieLoopMode
+
+    public init(name: String, play: Binding<Bool>) {
+        self.name = name
+        self._play = play
+    }
 
     // MARK: - UIViewRepresentable
 
@@ -31,5 +36,12 @@ public struct LottieView: UIViewRepresentable {
             uiView.stop()
             play = false
         }
+    }
+}
+
+extension LottieView {
+    /// Convenient initializer which sets `play` to `.constant(true)`.
+    public init(name: String) {
+        self.init(name: name, play: .constant(true))
     }
 }
