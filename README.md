@@ -12,12 +12,16 @@ Currently only supports `loopMode`, other properties are not implemented yet. Fe
 import PackageDescription
 
 let package = Package(
-    name: "YourTestProject",
+    name: "YourProjectName",
     platforms: [
         .iOS(.v13),
     ],
     dependencies: [
-        .package(name: "LottieSwiftUI", url: "https://github.com/LukasHromadnik/Lottie-SwiftUI.git", .upToNextMajor(from: Version(1, 0, 0)))
+        .package(
+            name: "LottieSwiftUI", 
+            url: "https://github.com/LukasHromadnik/Lottie-SwiftUI.git",
+            .upToNextMajor(from: Version(1, 1, 0))
+        )
     ],
     targets: [
         .target(name: "YourTestProject", dependencies: ["LottieSwiftUI"])
