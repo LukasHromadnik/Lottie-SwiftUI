@@ -44,7 +44,6 @@ public struct LottieView: UIViewRepresentable {
             }
         } else {
             uiView.stop()
-            play = false
         }
     }
 }
