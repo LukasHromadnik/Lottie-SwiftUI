@@ -32,11 +32,11 @@ public struct LottieView: UIViewRepresentable {
     
     // MARK: - UIViewRepresentable
 
-    public func makeUIView(context: Context) -> AnimationView {
-        AnimationView(animation: animation)
+    public func makeUIView(context: Context) -> WrapperAnimationView {
+        WrapperAnimationView(animation: animation)
     }
 
-    public func updateUIView(_ uiView: AnimationView, context: Context) {
+    public func updateUIView(_ uiView: WrapperAnimationView, context: Context) {
         uiView.loopMode = loopMode
         if play {
             uiView.play { completed in
