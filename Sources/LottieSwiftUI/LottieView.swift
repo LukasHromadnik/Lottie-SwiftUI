@@ -5,7 +5,7 @@ import Lottie
 public struct LottieView: UIViewRepresentable {
     
     /// The animation
-    let animation: Lottie.Animation?
+    let animation: LottieAnimation?
     
     /// Flag if the animation should be played
     @Binding var play: Bool
@@ -15,7 +15,7 @@ public struct LottieView: UIViewRepresentable {
     /// You can set this property using `lottieLoopMode` method on `View`
     @Environment(\.lottieLoopMode) var loopMode: LottieLoopMode
     
-    public init(animation: Lottie.Animation, play: Binding<Bool>) {
+    public init(animation: LottieAnimation, play: Binding<Bool>) {
         self.animation = animation
         self._play = play
     }
