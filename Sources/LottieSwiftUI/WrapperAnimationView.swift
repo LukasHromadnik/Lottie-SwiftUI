@@ -10,10 +10,10 @@ import Lottie
 
 // Needed to have proper size with `frame` modifier
 public final class WrapperAnimationView: UIView {
-    let animationView: AnimationView!
+    let animationView: LottieAnimationView!
 
-    init(animation: Lottie.Animation?) {
-        let animationView = AnimationView(animation: animation)
+    init(animation: LottieAnimation?) {
+        let animationView = LottieAnimationView(animation: animation)
         animationView.translatesAutoresizingMaskIntoConstraints = false
         self.animationView = animationView
 
