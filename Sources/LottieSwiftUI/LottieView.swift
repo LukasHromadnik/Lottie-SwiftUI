@@ -40,11 +40,12 @@ public struct LottieView: UIViewRepresentable {
         uiView.loopMode = loopMode
         if play {
             uiView.play { completed in
-                self.play = !completed
+                if play {
+                    self.play = !completed
+                } else {
+                    uiView.stop()
+                }
             }
-        } else {
-            uiView.stop()
-            play = false
         }
     }
 }
