@@ -30,6 +30,11 @@ public struct LottieView: UIViewRepresentable {
         _play = play
     }
     
+    public init(url:URL, play:Binding<Bool>) async {
+        _play = play
+        animation = await .loadedFrom(url: url)
+    }
+    
     // MARK: - UIViewRepresentable
 
     public func makeUIView(context: Context) -> WrapperAnimationView {
